@@ -875,8 +875,6 @@ void EditEntryWidget::loadEntry(Entry* entry,
     m_create = create;
     m_history = history;
 
-    
-
     if (history) {
         setHeadline(QString("%1 \u2022 %2").arg(parentName, tr("Entry history")));
     } else {
