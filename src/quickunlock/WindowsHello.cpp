@@ -163,6 +163,7 @@ bool WindowsHello::setKey(const QUuid& dbUuid, const QByteArray& data)
     auto challenge = Random::instance()->randomArray(ivSize);
     QByteArray key;
     if (!deriveEncryptionKey(challenge, key, m_error)) {
+        m_error = QObject::tr("Windows Hello setup was canceled or failed. Quick unlock has not been enabled.");
         return false;
     }
 
